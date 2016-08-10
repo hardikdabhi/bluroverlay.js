@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blur Overlay Demo</title>
+	
+	<!-- something pretty for demo :) -->
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<!-- fixed header, which will be blurred using library -->
+	<header id="header">
+			<h1>This is Blurred Header</h1>
+	</header>
+	<!-- scrollable content, entire page -->
+	<div class="content-wrapper">
+		<img src="img/1.jpg" />
+		<div style="text-align: center">
+			<h4>This is a demo for overlayed blur element</h4>
+			<button>Sample Button</button>
+		</div>
+		<img src="img/2.jpg" />
+	</div>
+	
+	<!-- jQuery library and blur overlay plugin -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="../dist/bluroverlay.min.js"></script>
+	
+	<script>
+		// create blurred element (header here!)
+		blurOverlay = $("#header").bluroverlay({
+			contentWrapperClass: "content-wrapper",
+			blur: "10",
+			opacity: 0.3,
+			background: "#fff",
+			height: "80px"
+		});
+	</script>
+</body>

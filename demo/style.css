@@ -1,0 +1,39 @@
+html, body{
+	font-family: arial, helvetica;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+}
+img{
+	width: 100%;
+}
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 1px solid #e90a60;
+	height: 80px;
+}
+h1{
+	color: #e90a60;
+	font-weight: 100;
+	text-align: center;
+	font-size: 1.5rem;
+	line-height: 48px;
+}
+h4{
+	font-weight: 100;
+	font-size: 1.3rem;
+	margin-bottom: 0.8rem;
+}
+button{
+	background-color: #e90a60;
+	color: #fff;
+	border: 0;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	width: 200px;
+	border-radius: 0.2rem;
+	margin-bottom: 2rem;
+}
