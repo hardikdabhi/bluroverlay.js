@@ -16,9 +16,15 @@
 		<img src="img/1.jpg" />
 		<div style="text-align: center">
 			<h4>This is a demo for overlayed blur element</h4>
-			<button>Sample Button</button>
+			<button onclick='blurOverlay.showBlurModal("modal");'>Click to see Modal</button>
 		</div>
 		<img src="img/2.jpg" />
+	</div>
+	
+	<!-- modal html -->
+	<div id="modal" name="blurred-modal">
+		<p>This is a modal which blurs it's background page</p>
+		<button onclick="blurOverlay.hideBlurModal();">Hide Modal</button>
 	</div>
 	
 	<!-- jQuery library and blur overlay plugin -->
@@ -26,13 +32,15 @@
 	<script src="../dist/bluroverlay.min.js"></script>
 	
 	<script>
+	var blurOverlay = {};
+	$(document).ready(function(){
 		// create blurred element (header here!)
 		blurOverlay = $("#header").bluroverlay({
 			contentWrapperClass: "content-wrapper",
 			blur: "10",
 			opacity: 0.3,
-			background: "#fff",
-			height: "80px"
+			background: "#fff"
 		});
+	});
 	</script>
 </body>

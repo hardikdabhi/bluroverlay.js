@@ -15,6 +15,9 @@ img{
 	border-bottom: 1px solid #e90a60;
 	height: 80px;
 }
+.content-wrapper{
+	padding-top: 80px;
+}
 h1{
 	color: #e90a60;
 	font-weight: 100;
@@ -36,4 +39,17 @@ button{
 	width: 200px;
 	border-radius: 0.2rem;
 	margin-bottom: 2rem;
+}
+#modal{
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	width: 400px;
+	padding: 10px;
+	margin-left: -200px;
+	text-align: center;
+	background-color: rgba(255,255,255,0.6);
+	border-radius: 0.25rem;
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
 }

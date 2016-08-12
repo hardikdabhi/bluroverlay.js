@@ -5,9 +5,9 @@
 		contentWrapperClass: "content-wrapper",
 		blur: 10,
 		opacity: 0.4,
-		background: "#fff",
-		height: "60px"
+		background: "#fff"
 	};
+	var _currentModalEle = "";
 	
 	var Bluroverlay = function (ele, options) {
 		this.ele			= ele;
@@ -18,7 +18,6 @@
 		this.options.blur	= options.blur || _defaultOptions.blur;
 		this.options.opacity	= options.opacity || _defaultOptions.opacity;
 		this.options.background	= options.background || _defaultOptions.background;
-		this.options.height	= options.height || this.$ele.height() || _defaultOptions.height;
 		
 		console.log(this.options);
 		
@@ -36,8 +35,7 @@
 			this.$ele.css({
 				"overflow": "hidden",
 				"z-index": 9999,
-				"background": this.options.background,
-				"height": this.options.height
+				"background": this.options.background
 			});
 			// add content blurred to ele
 			this.$ele.append('<div class="content-blurred '+this.options.contentWrapperClass+'">' 
@@ -57,7 +55,9 @@
 				"height": this.$ele.height()
 			});
 			// add style to page content
-			$("."+this.options.contentWrapperClass).css({ "padding-top":this.options.height });
+			//$("."+this.options.contentWrapperClass).css({ "padding-top":this.options.height });
+			// hide modals with name blurred-modal
+			$("[name='blurred-modal']").css({"display":"none", "z-index":10000});
 			// listen to page scroll
 			$(document).on("scroll", this._onscroll);
 			this._onscroll();
@@ -70,7 +70,7 @@
 				"transform": translation
 			}); 
 		},
-		showBlurmask: function(){
+		showBlurModal: function(elementId){
 			var $animation_ele = [this.$ele, $($("."+this.options.contentWrapperClass).get(1))];
 			$({blurRadius: 0}).animate({blurRadius: this.options.blur}, {
 				duration: 400,
@@ -86,8 +86,13 @@
 					});
 				}
 			});
+			// fade modal element in
+			if(elementId){
+				_currentModalEle = elementId;
+				$("#"+_currentModalEle).fadeIn();
+			}
 		},
-		hideBlurmask: function(){
+		hideBlurModal: function(){
 			var $animation_ele = [this.$ele, $($("."+this.options.contentWrapperClass).get(1))];
 			$({blurRadius: this.options.blur}).animate({blurRadius: "0px"}, {
 				duration: 300,
@@ -113,6 +118,11 @@
 					});
 				}
 			});
+			// fade modal element out
+			if(_currentModalEle){
+				$("#"+_currentModalEle).fadeOut();
+				_currentModalEle = "";
+			}
 		}
 	};
 	
