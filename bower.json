@@ -1,0 +1,24 @@
+{
+  "name": "bluroverlay.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hardikdabhi/bluroverlay.js",
+  "authors": [
+    "Hardik Dabhi <hardik@hardikdabhi.com>",
+    "Twinkle Katoch <contact@twinklekatoch.com>"
+  ],
+  "description": "jQuery plugin for blur overlay",
+  "main": "dist/bluroverlay.min.js",
+  "keywords": [
+    "blur",
+    "overlay",
+    "jquery"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

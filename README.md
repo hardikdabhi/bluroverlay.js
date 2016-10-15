@@ -3,7 +3,9 @@
 jQuery plugin that creates an element which blurs elements behind it (background elements). Also provides API to created a blurred modal/mask.
 Requires jQuery library.
 
-[To see live demo click here!](#)
+![Example GIF](http://hardikdabhi.com/projects/bluroverlay.js/img/bluroberlay.js.gif)
+
+[To see live demo click here!](http://www.hardikdabhi.com/projects/bluroverlay.js/demo/)
 
 ## Installation
 
@@ -25,7 +27,7 @@ Basic HTML
 <!DOCTYPE html>
 <html>
 <head>
-	
+
 </head>
 <body>
 	<!-- fixed element, which will blur elements behind it -->
@@ -36,7 +38,7 @@ Basic HTML
 	<div class="content-wrapper-class">
 		<p>... your html here ...</p>
 	</div>
-	
+
 	<!-- include jQuery library and blur overlay plugin -->
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script src="dist/bluroverlay.min.js"></script>
@@ -54,7 +56,7 @@ var blurOverlay = $("#element-id").bluroverlay({
 	background: "#fff"
 });
 ```
-> Note: CSS needs to be applied as required to make elements fixed on page. Plugin does NOT apply css _position_ tag to make any element _fixed_ or _absolute_. Download and run demo for example.
+> Note: CSS needs to be applied as required to make elements fixed on page. Plugin does NOT apply css `position` tag to make any element `fixed` or `absolute`. Download and run demo for example.
 
 ## Options
 
@@ -67,31 +69,31 @@ var blurOverlay = $("#element-id").bluroverlay({
 
 ## API
 
-* __blurOverlay.showBlurModal(elementId)__
+* __showBlurModal(elementId)__
 
-  Shows a modal with overlayed element and wrapper elements blurred in background. Pass modal element id in _elementId_.
-  
+  Shows a modal with overlayed element and wrapper elements blurred in background. Pass modal element id in `elementId`.
+
   Modal HTML
-  
+
   ```html
   <div id="modal" name="blurred-modal">
 	<p>Your modal html here</p>
   </div>
   ```
-  
+
   Script API
-  
+
   ```javascript
   blurOverlay.showBlurModal("modal");
   ```
-  
-  >Give `name=blurred-modal`. This will hide the modal on init and show it while using this API.
 
-* __blurOverlay.hideBlurModal()__
+  > Give `name=blurred-modal`. This will hide the modal on init and show it while using this API.
+
+* __hideBlurModal()__
 
   Hides previously shown modal.
-  
-  ```javascript
+
+  ```js
   blurOverlay.hideBlurModal();
   ```
 
